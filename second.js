@@ -25,16 +25,36 @@ const container = document.querySelector('#container');
 // })}
 
 const form = document.querySelector('#form')
+const div = document.getElementById('div2');
+var i = 0 ;
 form.addEventListener('submit',async function(e)
 {
     e.preventDefault();
     const search = form.elements.input.value;
     console.log(search);
     const res = await axios.get(`https://pokeapi.co/api/v2/pokemon/${search}`)
-    const img = document.createElement('img')
-    img.src=res.data.sprites.front_default;
-    const div = document.getElementById('div2')
-    div.appendChild(img)
+    createimg(res.data);
+    console.log(i)
 })
 
+createimg = (data) => {
+    if(i==0)
+    {
+    const img1 = document.createElement('img')
+    img1.src = data.sprites.front_default;
+    img1.setAttribute('id','img1');
+    div.appendChild(img1);
+    i++;
+    }
+    else{
+        delimg();
+        createimg(data);
+    }
+}
 
+delimg = () =>
+{
+    const del = document.getElementById('img1');
+    del.remove();
+    i--;
+}
