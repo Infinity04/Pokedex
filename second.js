@@ -2,7 +2,9 @@ const container = document.querySelector('#container');
 const form = document.querySelector('#form')
 const div = document.getElementById('player');
 const comp = document.getElementById('computer');
+const div1 = document.getElementById('div1');
 var i = 0 ;
+var numbers = [];
 form.addEventListener('submit',async function(e)
 {
     e.preventDefault();
@@ -13,8 +15,10 @@ form.addEventListener('submit',async function(e)
     console.log(i)
 })
 
+
+
 createimg = (data) => {
-    if(i<6)
+    if(i<5)
     {
     const img1 = document.createElement('img')
     img1.src = data.sprites.other['official-artwork'].front_default;
@@ -23,22 +27,25 @@ createimg = (data) => {
     const para = document.createElement('h3');
     console.log(data.name);
     para.textContent = data.name.toUpperCase();
+    numbers[i] = data.base_experience; 
     i++;
     div.appendChild(para);
     compimg();
     }
+
     else{
- 
+        
+        alert("YOU CAN ONLY PICK 3")
     }
 }
 
-delimg = (data) =>
-{
-    console.log(data);
-    const del = document.getElementById(`${data}`);
-    del.remove();
-    i--;
-}
+// delimg = (data) =>
+// {
+//     console.log(data);
+//     const del = document.getElementById(`${data}`);
+//     del.remove();
+//     i--;
+// }
 
 compimg = async () =>
 {
@@ -57,10 +64,41 @@ createimgc = (data) => {
     console.log(data.name);
     para.textContent = data.name.toUpperCase();
     comp.appendChild(para);
+    numbers[i] = data.base_experience; 
     i++;
+    if(i==6)
+    {
+        winner();
+    }
 }
 function getRandomInt() {
     min = 1
     max = 350
     return Math.floor(Math.random() * (max - min + 1)) + min;
   }
+
+winner = () =>
+{ var count = 0 ;
+    if(numbers[0]>numbers[1]){
+        count++;
+    }
+   if(numbers[2]>numbers[3])
+   {
+    count++;
+   }
+   if(numbers[4]>numbers[5])
+    {
+        count++;
+    }
+    const para = document.createElement('h1');
+    if(count>=2)
+    {
+        
+        para.textContent = "YOU WON" 
+        
+    }
+    else{
+        para.textContent = "YOU LOST" 
+    }
+    div1.appendChild(para);
+}

@@ -49,6 +49,7 @@ h2{
 }
 .button
 {
+    margin:10px;
     width: 200px;
     height: 60px;
     text-align: center;
