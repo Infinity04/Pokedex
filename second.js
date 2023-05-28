@@ -1,31 +1,7 @@
 const container = document.querySelector('#container');
-// const base = 'https://raw.githubusercontent.com/monikode/pokedex/master/assets/pokemon/'
-
-// for(let i=100 ; i<899 ;i++)
-// {
-//     const divi = document.createElement('div')
-//     divi.classList.add('period');
-
-//     const tag = document.createElement('p');
-//     const imga = document.createElement('img');
-//     imga.src = `${base}${i}.png`
-//     container.append(divi)
-//     divi.appendChild(imga)
-// }
-
-//  const back = document.querySelector('body');
-// // back.setAttribute('style','background-color:red')
-// const clicka = document.querySelectorAll('.period');
-// for(const box of clicka){
-// box.addEventListener('click',function(){
-//     let r = Math.floor(Math.random()*255)
-//     let g = Math.floor(Math.random()*255)
-//     let b = Math.floor(Math.random()*255)
-// back.setAttribute('style',`background-color:rgb(${r},${g},${b}`)
-// })}
-
 const form = document.querySelector('#form')
-const div = document.getElementById('div2');
+const div = document.getElementById('player');
+const comp = document.getElementById('computer');
 var i = 0 ;
 form.addEventListener('submit',async function(e)
 {
@@ -38,23 +14,53 @@ form.addEventListener('submit',async function(e)
 })
 
 createimg = (data) => {
-    if(i==0)
+    if(i<6)
     {
     const img1 = document.createElement('img')
-    img1.src = data.sprites.front_default;
+    img1.src = data.sprites.other['official-artwork'].front_default;
     img1.setAttribute('id','img1');
     div.appendChild(img1);
+    const para = document.createElement('h3');
+    console.log(data.name);
+    para.textContent = data.name.toUpperCase();
     i++;
+    div.appendChild(para);
+    compimg();
     }
     else{
-        delimg();
-        createimg(data);
+ 
     }
 }
 
-delimg = () =>
+delimg = (data) =>
 {
-    const del = document.getElementById('img1');
+    console.log(data);
+    const del = document.getElementById(`${data}`);
     del.remove();
     i--;
 }
+
+compimg = async () =>
+{
+    var a = getRandomInt();
+     const res = await axios.get(`https://pokeapi.co/api/v2/pokemon/${a}`);
+     createimgc(res.data);
+     
+
+}
+createimgc = (data) => {
+    const img2 = document.createElement('img')
+    img2.src = data.sprites.other['official-artwork'].front_default;
+    img2.setAttribute('id','img2');
+    comp.appendChild(img2);
+    const para = document.createElement('h3');
+    console.log(data.name);
+    para.textContent = data.name.toUpperCase();
+    comp.appendChild(para);
+    i++;
+}
+function getRandomInt() {
+    min = 1
+    max = 350
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+  }

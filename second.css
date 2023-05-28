@@ -3,9 +3,9 @@
 }
 img{
     display: block;
-    width: 250px;
-    margin : 20px;
-    padding :5px;
+    width: 175px;    
+    margin: auto;
+
 }
 body {
     display: inline;
@@ -15,11 +15,16 @@ body {
 }
 h1{
     font-size: 60px;
+    text-decoration-line: underline;
+
+
 }
 h2{
     background-color: aqua;
     width:100%;
-    padding: 20px;
+    padding:auto;
+    padding-top: 10px;
+    padding-bottom: 10px;
     /* display : inline; */
     /* border-radius: 20% 30% 20% 30%;
     border-style: solid;
@@ -29,14 +34,17 @@ h2{
 #div1
 {
     background-color: blueviolet;
-    height: 50vh;
+    height: 100vh;
     margin: 0%;
     padding: 0%;
+    width :50%;
+    align-items: left;
+    float: left;
 }
 .input
 {
     margin-top:30px;
-    margin-bottom: 10px;
+    margin-bottom: 30px;
     display: inline;
 }
 .button
@@ -59,20 +67,7 @@ h2{
 button:hover{
     animation: animate 8s linear infinite;
 }
-/* button:before{
-    content: '';
-    position: absolute;
-    top: -5px;
-    left: -5px;
-    right: -5px;
-    bottom: -5px;
-    z-index: -1;
-    background: linear-gradient(90deg,#5bcedf, #f96161, #fc8f46, #36e494);
-    background-size: 400px;
-    border-radius: 40px;
-    opacity: 0;
-    transition: 0.5s;
-} */
+
 button:hover:before{
     filter: blur(10px);
     opacity: 1;
@@ -93,10 +88,24 @@ button:hover:before{
         background-position: 400%;
     }
 }
-img
-{
-    display: inline;
-    place-items: center;
-    text-align: center;
 
+#div2
+{
+    margin: 0%;
+    padding: 0%;
+} 
+#head2
+{
+    margin :21px;
+}
+#player 
+{
+    float: left;
+    width: 25%;
+
+}
+#computer
+{
+    width: 25%;
+    float: right;
 }
