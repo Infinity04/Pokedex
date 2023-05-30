@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="Stylesheet" href="temp.css">
+</head>
+
+<body>
+    <h1>Welcome to the Pokemon Fightclub</h1>
+    <div class="makeTeam">
+        <div><label for="searchPokemon">Make Your team:</label>
+            <input type="text" name="searchPokemon" id="searchPokemon" placeholder="Search here">
+        </div>
+        <button id="addbtn">Add To team</button>
+    </div>
+    <div class="team">
+        <p>Your Team: </p>
+        <div class="myteam" id="myteam">
+
+        </div>
+    </div>
+    <div class="fight">
+        <button id="fightbtn">Fight !</button>
+        <div id="popup" class="popup">
+            <div id="playerTeam"></div>
+            <h2>VS</h2>
+            <div id="compTeam"></div>
+            <button id="gobtn" class="go"> GO!!!!!</button>
+            <button id="closebtn">X</button>
+            <div id="win" class="win">Yeah!! You Won. </div>
+            <div id="lost" class="lost">Oops! You lost.</div>
+        </div>
+    </div>
+
+
+
+    <script src="temp.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+</body>
+
+
+</html>

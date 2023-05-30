@@ -1,0 +1,195 @@
+body {
+    background-color: rgb(3, 78, 121);
+    color: whitesmoke;
+}
+
+h1 {
+    text-align: center;
+}
+
+.makeTeam {
+    width: 70%;
+    margin: auto;
+
+    padding: 20px;
+    text-align: center;
+}
+
+.makeTeam div label {
+    width: 20%;
+}
+
+.makeTeam div input {
+    margin-bottom: 12px;
+    margin-left: 12px;
+    width: 50%;
+    padding: 2px;
+    border-radius: 4px;
+}
+
+#addbtn {
+    width: 20%;
+    padding: 8px;
+    font-weight: 550;
+    font-size: large;
+    outline: none;
+    border-radius: 7px;
+    background-color: #8dcbe4;
+}
+
+/* Team */
+.team {
+
+    width: 70%;
+    margin: auto;
+    text-align: center;
+}
+
+.myteam {
+    width: 70%;
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+}
+
+.myteam img {
+    width: 100px;
+    height: 100px;
+}
+
+/* Fight  */
+.fight {
+    width: 20%;
+    margin: auto;
+    margin-top: 20px;
+}
+
+#fightbtn {
+    margin: auto;
+    width: 100%;
+    padding: 8px;
+    font-weight: 550;
+    font-size: large;
+    outline: none;
+    border-radius: 7px;
+    background-color: #8dcbe4;
+}
+
+.popup {
+    position: absolute;
+    top: 0%;
+    left: 50%;
+    transform: scale(0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    border: 1px solid cyan;
+    padding: 10px;
+    visibility: hidden;
+    transition: all 0.2s;
+    background-color: #fff;
+    width: 80%;
+    height: 90%;
+    color: black;
+}
+
+.popup div {
+    margin: 12px;
+    margin: 0px 100px;
+}
+
+.popup2 {
+    visibility: visible;
+    top: 50%;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.popup img {
+    width: 100px;
+    height: 100px;
+}
+
+#playerTeam {
+    text-align: center;
+}
+
+#compTeam {
+    text-align: center;
+}
+
+.go {
+    display: block;
+}
+
+#gobtn {
+    margin: auto;
+    width: 20%;
+    padding: 8px;
+    font-weight: 550;
+    font-size: large;
+    outline: none;
+    border-radius: 7px;
+    background-color: #8dcbe4;
+    position: absolute;
+    bottom: 0%;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-bottom: 10px;
+}
+
+#closebtn {
+    position: absolute;
+    right: 0%;
+    top: 0%;
+    background-color: #8dcbe4;
+    border: none;
+    border-radius: 3px;
+    margin: 12px;
+    font-size: large;
+    cursor: pointer;
+}
+
+.win {
+    /* width: 15%; */
+    padding: 12px;
+    height: 30px;
+    color: green;
+    font-size: larger;
+    position: absolute;
+    bottom: 0%;
+    left: 50%;
+    transform: translateX(-50%) scale(0.1);
+    margin-bottom: 10px;
+    background-color: #fff;
+    text-align: center;
+    visibility: hidden;
+    transition: all 0.2s;
+    border: 1px solid green;
+}
+
+.lost {
+    /* width: 15%; */
+    padding: 12px;
+    height: 30px;
+    color: red;
+    font-size: larger;
+    position: absolute;
+    bottom: 0%;
+    left: 50%;
+    transform: translateX(-50%) scale(0.1);
+    margin-bottom: 10px;
+    background-color: #fff;
+    text-align: center;
+    visibility: hidden;
+    transition: all 0.2s;
+    border: 1px solid red;
+}
+
+.matchResult {
+    visibility: visible;
+    transform: translate(-100%, 0%) scale(5);
+    top: 50%;
+}
